@@ -1,4 +1,3 @@
-package algorithems4th.unionfind;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -7,8 +6,9 @@ public class Percolation {
 	private boolean[] flag; // is opened flag
 	private WeightedQuickUnionUF tuf; // union-find from top
 	private WeightedQuickUnionUF buf; // union-find from bottom
-	private int topNode;
-	private int bottomNode;
+	int topNode;
+	int bottomNode;
+	boolean isPercolated;
 
 	public Percolation(int n) {
 		if (n <= 0) {
@@ -20,16 +20,15 @@ public class Percolation {
 		for (int i = 0; i < SIZE * SIZE; i++) {
 			flag[i] = false;
 		}
-		tuf = new WeightedQuickUnionUF(SIZE * SIZE + 2);
-		buf = new WeightedQuickUnionUF(SIZE * SIZE + 2);
+		tuf = new WeightedQuickUnionUF(SIZE * SIZE + 1);
+		buf = new WeightedQuickUnionUF(SIZE * SIZE + 1);
 		topNode = SIZE * SIZE;
-		bottomNode = SIZE * SIZE+1;
+		bottomNode = SIZE * SIZE;
+		isPercolated = false;
 		// connect to virtual nodes
 		for (int i = 1; i < SIZE + 1; i++) {
 			tuf.union(xyTo1D(1, i), topNode);
-			buf.union(xyTo1D(1, i), topNode);
 			buf.union(xyTo1D(SIZE, i), bottomNode);
-			tuf.union(xyTo1D(SIZE, i), bottomNode);
 		}
 	}
 
@@ -68,6 +67,7 @@ public class Percolation {
 			}
 			count++;
 
+			isPercolated = isPercolated || (tuf.connected(index, topNode) && buf.connected(index, bottomNode));
 		}
 	}
 
@@ -84,7 +84,7 @@ public class Percolation {
 	}
 
 	public boolean percolates() {
-		return buf.connected(topNode, bottomNode);
+		return isPercolated;
 	}
 
 	public static void main(String[] args) {
