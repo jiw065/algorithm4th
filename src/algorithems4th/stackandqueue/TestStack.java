@@ -1,4 +1,4 @@
-package algorithems4th.stack;
+package algorithems4th.stackandqueue;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;

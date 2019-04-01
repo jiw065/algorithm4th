@@ -1,4 +1,4 @@
-package algorithems4th.stack;
+package algorithems4th.stackandqueue;
 
 import org.omg.CORBA.Current;
 
