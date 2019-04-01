@@ -1,4 +1,4 @@
-package algorithems4th.stack.queue.bag;
+package algorithems4th.stack;
 
 /**
  * Array implmention for stack(LIFO)
