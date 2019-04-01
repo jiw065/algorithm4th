@@ -5,7 +5,11 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * The test client
  * @author Amber
- *
+ * add:
+ * throw exception when pop an empty list
+ * use resizing array for array implementation
+ * we allow null items to be entered
+ * loitering: holding a reference for the object when it is no longer needed
  */
 public class TestStack {
 
