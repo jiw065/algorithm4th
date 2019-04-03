@@ -146,13 +146,13 @@ public class Deque<Item> implements Iterable<Item> {
 		return new DQIterator();
 	}
 
-//	public void printQueue() {
-//		Iterator<Item> r = this.iterator();
-//		while(r.hasNext()) {
-//			System.out.print(r.next()+" ");
-//		}
-//		System.out.println();
-//	}
+	public void printQueue() {
+		Iterator<Item> r = this.iterator();
+		while(r.hasNext()) {
+			System.out.print(r.next()+" ");
+		}
+		System.out.println();
+	}
 	public static void main(String[] args) {
 		Deque<String> q = new Deque<String>();
 		while (!StdIn.isEmpty()) {

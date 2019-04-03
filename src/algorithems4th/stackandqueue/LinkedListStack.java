@@ -1,6 +1,5 @@
 package algorithems4th.stackandqueue;
 
-import org.omg.CORBA.Current;
 
 /**
  * Linked list implementation for stack(LIFO)
@@ -10,15 +9,21 @@ import org.omg.CORBA.Current;
  * boolean isEmpty()
  * int size()
  */
-public class LinkedListStack {
+public class LinkedListStack<Item> {
    
-	private Node sentiniel = new Node("dummy",null);
+	private Node sentiniel;
+	private int counter = 0;
+	
+	public LinkedListStack(Item a){
+		sentiniel = new Node(a,null);
+	}
+	
   
-    private int counter = 0;
+    
 	private class Node{
-    	String item;
+    	Item item;
     	Node next;
-    	public Node(String s,Node n) {
+    	public Node(Item s,Node n) {
     		item = s;
     		next = n;
     	}
@@ -27,7 +32,7 @@ public class LinkedListStack {
     
 	
 	
-	void push(String item) {
+	void push(Item item) {
 		Node n = new Node(item,null);
 		
 		Node temp = this.sentiniel.next;
@@ -36,7 +41,7 @@ public class LinkedListStack {
 		counter++;
 	}
 	
-	String pop() {
+	Item pop() {
 		Node n = this.sentiniel.next;
 		this.sentiniel.next = n.next;
 		counter--;
@@ -49,6 +54,15 @@ public class LinkedListStack {
 	
 	int size() {
 		return counter;		
+	}
+	
+	void printStack() {
+		Node current = sentiniel.next;
+		for(int i = 0;i<size();i++) {
+			System.out.print(current.item+" ");
+			current = current.next;
+		}
+		System.out.println();
 	}
 
 }
