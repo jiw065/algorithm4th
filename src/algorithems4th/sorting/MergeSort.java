@@ -46,6 +46,10 @@ public class MergeSort {
 		int mid = lo+(hi-lo)/2;
 		mergeSort(aux,sa, lo, mid);
 		mergeSort(aux,sa, mid+1, hi);
+		//improve performance
+		if(sa[mid] <= sa[mid+1]) {
+			return; 
+		}
 		//conquer
 		
         for (int i = lo; i <= hi; i++) {
