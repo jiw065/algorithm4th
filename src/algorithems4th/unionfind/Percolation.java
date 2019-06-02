@@ -1,6 +1,6 @@
 package algorithems4th.unionfind;
-
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+
 
 public class Percolation {
 	private final int SIZE; // n*n site

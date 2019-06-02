@@ -64,7 +64,7 @@ public class PercolationVisualizer {
     }
 
     public static void main(String[] args) {
-        In in = new In(new File("J:\\programs\\cs\\al4th\\percolation\\Wayne98.txt"));      // input file
+        In in = new In(new File("J:\\programs\\cs\\ALgorithms\\al4th\\percolation\\greeting57.txt"));      // input file
         int n = in.readInt();         // n-by-n percolation system
 
         // turn on animation mode

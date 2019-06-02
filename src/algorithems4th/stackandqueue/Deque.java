@@ -21,7 +21,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class Deque<Item> implements Iterable<Item> {
 
-	private Node sNode, tail;
+	private  Node sNode, tail;
 	private int count = 0;
 	private class Node {
 		Item item;
