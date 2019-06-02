@@ -13,7 +13,7 @@ public class MergeSort {
 		int j = mid+1;
 		int i = lo;
 		int k = lo;
-
+		
 		while(i<=mid && j<=hi) {
 			if(aux[i]<=aux[j]) {
 				sa[k] = aux[i];
@@ -24,6 +24,7 @@ public class MergeSort {
 			}
 			k++;
 		}
+		//copy rest to array
 		while(k <= hi) {
 			if(i > mid) {
 				sa[k] = aux[j];
